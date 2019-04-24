@@ -1,0 +1,18 @@
+to print db in rails console
+1.with limited entries
+2.with only specified colomns
+3.ordered
+tp Movie.limit(20).order(year: :desc), :name, :year, :allocine_rating,:my_rating
+
+
+to print db
+1. with multipule "or" conditions ("not" works similarly)
+2. grouped (actually, it is "order"....you see)
+
+
+tp (Movie.where(genre:"Legend").or(Movie.where(genre: "Horror"))).order(genre: :desc).order(year: :desc), :id, :name,:year, :genre, :my_rating
+
+
+Track.where(artist: "AC/DC").each do |i|
+  puts i.title
+end
